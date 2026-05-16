@@ -1,90 +1,951 @@
 [
-  { "id": 1, "name": "김치찌개", "emoji": "🍲", "description": "집밥 느낌 한 그릇", "categories": ["soup", "spicy", "budget"], "recommend_count": 142 },
-  { "id": 2, "name": "짜장면", "emoji": "🍜", "description": "중국집 1인분 OK", "categories": ["budget", "quick", "lazy"], "recommend_count": 98 },
-  { "id": 3, "name": "삼각김밥", "emoji": "🍙", "description": "편의점의 정석", "categories": ["budget", "quick", "convenience", "lazy"], "recommend_count": 211 },
-  { "id": 4, "name": "라면", "emoji": "🍜", "description": "자취생의 영원한 친구", "categories": ["spicy", "soup", "budget", "quick", "lazy", "late_night"], "recommend_count": 334 },
-  { "id": 5, "name": "비빔밥", "emoji": "🥗", "description": "건강하게 한 끼", "categories": ["healthy", "budget"], "recommend_count": 87 },
-  { "id": 6, "name": "치킨", "emoji": "🍗", "description": "혼치킨도 행복", "categories": ["drink", "lazy", "late_night"], "recommend_count": 276 },
-  { "id": 7, "name": "편의점 도시락", "emoji": "🍱", "description": "가성비 최강", "categories": ["budget", "quick", "convenience", "lazy"], "recommend_count": 189 },
-  { "id": 8, "name": "카레라이스", "emoji": "🍛", "description": "만들어두면 며칠은 OK", "categories": ["budget"], "recommend_count": 73 },
-  { "id": 9, "name": "김치볶음밥", "emoji": "🍳", "description": "냉장고 파먹기의 정석", "categories": ["budget", "quick", "spicy"], "recommend_count": 156 },
-  { "id": 10, "name": "돈부리", "emoji": "🍚", "description": "일식 1인분 전문점", "categories": ["budget"], "recommend_count": 64 },
-  { "id": 11, "name": "순대국밥", "emoji": "🥣", "description": "든든한 국밥 한 그릇", "categories": ["soup", "budget", "spicy"], "recommend_count": 112 },
-  { "id": 12, "name": "샌드위치", "emoji": "🥪", "description": "간편하고 든든하게", "categories": ["healthy", "budget", "quick", "convenience"], "recommend_count": 95 },
-  { "id": 13, "name": "피자", "emoji": "🍕", "description": "혼피자 2~3조각 딱", "categories": ["lazy", "late_night", "drink"], "recommend_count": 134 },
-  { "id": 14, "name": "떡볶이", "emoji": "🌶️", "description": "분식의 왕", "categories": ["spicy", "budget", "late_night", "convenience", "quick"], "recommend_count": 203 },
-  { "id": 16, "name": "짬뽕", "emoji": "🦐", "description": "칼칼하게 속 풀기", "categories": ["spicy", "soup"], "recommend_count": 89 },
-  { "id": 19, "name": "김밥", "emoji": "🍣", "description": "한 줄만 사도 든든", "categories": ["budget", "quick", "convenience"], "recommend_count": 167 },
-  { "id": 20, "name": "우동", "emoji": "🍜", "description": "따뜻한 국물 한 사발", "categories": ["soup", "budget"], "recommend_count": 78 },
-  { "id": 21, "name": "햄버거", "emoji": "🍔", "description": "혼밥하기 좋은 패스트푸드", "categories": ["budget", "quick", "lazy"], "recommend_count": 143 },
-  { "id": 22, "name": "스팸계란밥", "emoji": "🥚", "description": "냉장고 필수 재료로", "categories": ["budget", "quick", "lazy"], "recommend_count": 198 },
-  { "id": 23, "name": "닭가슴살 샐러드", "emoji": "🥗", "description": "단백질 챙기는 가벼운 한 끼", "categories": ["healthy", "budget", "quick", "convenience"], "recommend_count": 56 },
-  { "id": 24, "name": "막국수", "emoji": "🍝", "description": "여름엔 냉, 겨울엔 온", "categories": ["soup", "budget"], "recommend_count": 91 },
-  { "id": 25, "name": "초밥", "emoji": "🍣", "description": "편의점 초밥도 충분해", "categories": ["convenience", "flex"], "recommend_count": 109 },
-  { "id": 26, "name": "수제버거", "emoji": "🍔", "description": "혼자 여유롭게", "categories": ["flex"], "recommend_count": 72 },
-  { "id": 27, "name": "컵라면", "emoji": "🍜", "description": "언제나 믿음직한", "categories": ["soup", "spicy", "budget", "quick", "convenience", "late_night", "lazy"], "recommend_count": 247 },
-  { "id": 28, "name": "오므라이스", "emoji": "🍳", "description": "집에서 카페 느낌", "categories": ["budget"], "recommend_count": 83 },
-  { "id": 29, "name": "부대찌개", "emoji": "🌭", "description": "배달 반솥도 OK", "categories": ["soup", "spicy", "drink"], "recommend_count": 67 },
-  { "id": 30, "name": "제육볶음", "emoji": "🥩", "description": "밥 두 공기 각오", "categories": ["spicy", "drink"], "recommend_count": 175 },
-  { "id": 31, "name": "마라탕", "emoji": "🫕", "description": "중독성 있는 매운맛", "categories": ["spicy", "soup", "late_night", "lazy"], "recommend_count": 221 },
-  { "id": 32, "name": "요아정", "emoji": "🍦", "description": "요거트 아이스크림 정식", "categories": ["sweet", "budget", "convenience", "late_night", "lazy"], "recommend_count": 183 },
-  { "id": 35, "name": "치맥", "emoji": "🍺", "description": "치킨에 맥주, 국민 조합", "categories": ["drink", "late_night", "budget", "lazy"], "recommend_count": 312 },
-  { "id": 36, "name": "족발", "emoji": "🍖", "description": "소분 배달도 가능", "categories": ["drink", "late_night", "lazy"], "recommend_count": 156 },
-  { "id": 37, "name": "곱창전골", "emoji": "🥘", "description": "소주 한 잔이랑", "categories": ["spicy", "soup", "drink"], "recommend_count": 88 },
-  { "id": 38, "name": "두쫀쿠", "emoji": "🍪", "description": "두바이 쫀득 쿠키", "categories": ["sweet", "budget", "convenience", "lazy"], "recommend_count": 145 },
-  { "id": 39, "name": "붕어빵", "emoji": "🐠", "description": "길거리 간식의 대명사", "categories": ["sweet", "budget", "convenience", "late_night"], "recommend_count": 207 },
-  { "id": 40, "name": "연어덮밥", "emoji": "🍱", "description": "건강하고 맛있는 한 끼", "categories": ["healthy", "flex"], "recommend_count": 119 },
-  { "id": 41, "name": "개성주악", "emoji": "🍩", "description": "쫀득한 전통 기름 도너츠", "categories": ["sweet", "budget", "late_night"], "recommend_count": 94 },
-  { "id": 42, "name": "티라미수", "emoji": "🍮", "description": "달콤쌉쌀한 이탈리안 디저트", "categories": ["sweet", "flex"], "recommend_count": 78 },
-  { "id": 43, "name": "빙수", "emoji": "🧊", "description": "팥빙수부터 인절미까지", "categories": ["sweet", "budget"], "recommend_count": 165 },
-  { "id": 44, "name": "버터떡", "emoji": "🍡", "description": "요즘 핫한 버터 발라먹는 떡", "categories": ["sweet", "budget", "convenience"], "recommend_count": 132 },
-  { "id": 45, "name": "닭갈비", "emoji": "🍗", "description": "칼칼하고 불맛 나는 볶음", "categories": ["spicy", "drink"], "recommend_count": 188 },
-
-  { "id": 46, "name": "불닭볶음면", "emoji": "🔥", "description": "매운맛 한계 도전", "categories": ["spicy", "budget", "quick", "late_night", "lazy"], "recommend_count": 267 },
-  { "id": 47, "name": "마라샹궈", "emoji": "🫕", "description": "마라 좋아하면 무조건", "categories": ["spicy", "flex", "late_night"], "recommend_count": 194 },
-  { "id": 48, "name": "쭈꾸미볶음", "emoji": "🦑", "description": "밥이랑 먹으면 찰떡", "categories": ["spicy", "drink", "budget"], "recommend_count": 142 },
-  { "id": 49, "name": "닭발", "emoji": "🦴", "description": "맥주랑 먹으면 천국", "categories": ["spicy", "drink", "late_night"], "recommend_count": 118 },
-  { "id": 50, "name": "순대볶음", "emoji": "🌭", "description": "분식집 숨은 레전드", "categories": ["spicy", "drink", "budget", "late_night"], "recommend_count": 127 },
-  { "id": 51, "name": "엽떡", "emoji": "🌶️", "description": "매운 떡볶이의 끝판왕", "categories": ["spicy", "budget", "late_night", "lazy"], "recommend_count": 231 },
-
-  { "id": 52, "name": "설렁탕", "emoji": "🍲", "description": "뽀얀 국물 한 그릇", "categories": ["soup", "budget"], "recommend_count": 89 },
-  { "id": 53, "name": "된장찌개", "emoji": "🥘", "description": "구수하고 따뜻한 집밥", "categories": ["soup", "budget", "healthy"], "recommend_count": 134 },
-  { "id": 54, "name": "육개장", "emoji": "🍲", "description": "얼큰하게 한 그릇", "categories": ["soup", "spicy", "budget"], "recommend_count": 97 },
-  { "id": 55, "name": "감자탕", "emoji": "🦴", "description": "뼈다귀 잡고 먹는 맛", "categories": ["soup", "spicy", "drink"], "recommend_count": 103 },
-  { "id": 56, "name": "냉면", "emoji": "🍜", "description": "시원하게 후루룩", "categories": ["soup", "budget"], "recommend_count": 112 },
-  { "id": 57, "name": "쌀국수", "emoji": "🍜", "description": "가볍고 건강한 국물", "categories": ["soup", "budget", "healthy"], "recommend_count": 86 },
-  { "id": 58, "name": "전복죽", "emoji": "🍚", "description": "몸 챙기는 날", "categories": ["soup", "flex", "healthy"], "recommend_count": 74 },
-
-  { "id": 59, "name": "아사이볼", "emoji": "🫐", "description": "인스타 갬성 건강식", "categories": ["healthy", "flex"], "recommend_count": 63 },
-  { "id": 60, "name": "포케", "emoji": "🍱", "description": "하와이안 웰니스 한 끼", "categories": ["healthy", "flex", "budget"], "recommend_count": 81 },
-  { "id": 61, "name": "그릭요거트", "emoji": "🥛", "description": "가볍게 죄책감 없이", "categories": ["healthy", "budget", "convenience", "quick"], "recommend_count": 57 },
-  { "id": 62, "name": "두부 샐러드", "emoji": "🥗", "description": "든든한 식물성 한 끼", "categories": ["healthy", "budget"], "recommend_count": 44 },
-  { "id": 63, "name": "오트밀", "emoji": "🥣", "description": "아침엔 가볍게", "categories": ["healthy", "budget", "quick", "convenience"], "recommend_count": 52 },
-
-  { "id": 64, "name": "스테이크", "emoji": "🥩", "description": "혼자라도 고기는 먹어야지", "categories": ["flex"], "recommend_count": 148 },
-  { "id": 65, "name": "스시 오마카세", "emoji": "🍣", "description": "가끔은 이런 사치도", "categories": ["flex"], "recommend_count": 87 },
-  { "id": 66, "name": "갈비찜", "emoji": "🍖", "description": "특별한 날엔 갈비찜", "categories": ["flex", "soup"], "recommend_count": 96 },
-  { "id": 67, "name": "한우 육회", "emoji": "🥩", "description": "나 자신에게 주는 선물", "categories": ["flex", "drink"], "recommend_count": 79 },
-  { "id": 68, "name": "보쌈", "emoji": "🥬", "description": "막걸리랑 최고의 궁합", "categories": ["flex", "drink"], "recommend_count": 112 },
-  { "id": 69, "name": "까르보나라", "emoji": "🍝", "description": "크리미하게 한 그릇", "categories": ["flex", "budget"], "recommend_count": 138 },
-
-  { "id": 70, "name": "막걸리 + 파전", "emoji": "🍶", "description": "비 오는 날 조합", "categories": ["drink", "budget", "late_night"], "recommend_count": 201 },
-  { "id": 71, "name": "두부김치", "emoji": "🥢", "description": "소주 한 잔이랑 딱", "categories": ["drink", "budget"], "recommend_count": 167 },
-  { "id": 72, "name": "와인 + 치즈보드", "emoji": "🍷", "description": "홈술의 격을 올려보자", "categories": ["drink", "flex"], "recommend_count": 93 },
-  { "id": 73, "name": "하이볼", "emoji": "🥃", "description": "위스키 소다, 혼술 갬성", "categories": ["drink", "budget"], "recommend_count": 156 },
-  { "id": 74, "name": "사케 + 오뎅", "emoji": "🍢", "description": "일식 감성 혼술", "categories": ["drink", "budget"], "recommend_count": 84 },
-  { "id": 75, "name": "반반치킨", "emoji": "🍗", "description": "양념 반 후라이드 반", "categories": ["drink", "lazy", "late_night", "budget"], "recommend_count": 289 },
-
-  { "id": 76, "name": "마카롱", "emoji": "🍬", "description": "형형색색 달달한 한 입", "categories": ["sweet", "flex", "budget"], "recommend_count": 88 },
-  { "id": 77, "name": "크로플", "emoji": "🧇 ", "description": "크루아상 + 와플의 만남", "categories": ["sweet", "budget"], "recommend_count": 113 },
-  { "id": 78, "name": "소금빵", "emoji": "🥐", "description": "버터향 가득 촉촉하게", "categories": ["sweet", "budget", "convenience", "quick"], "recommend_count": 197 },
-  { "id": 79, "name": "탕후루", "emoji": "🍡", "description": "달달 새콤 과일 꼬치", "categories": ["sweet", "budget", "late_night", "convenience"], "recommend_count": 162 },
-  { "id": 80, "name": "흑임자 라떼", "emoji": "☕", "description": "요즘 핫한 고소한 달달", "categories": ["sweet", "budget", "quick"], "recommend_count": 104 },
-
-  { "id": 81, "name": "편의점 핫바", "emoji": "🌭", "description": "출출할 때 바로 해결", "categories": ["budget", "quick", "convenience", "lazy"], "recommend_count": 178 },
-  { "id": 82, "name": "떡꼬치", "emoji": "🍢", "description": "매콤 달콤 길거리 간식", "categories": ["budget", "spicy", "late_night", "convenience"], "recommend_count": 143 },
-  { "id": 83, "name": "핫도그", "emoji": "🌭", "description": "밀가루 반죽 바삭한 그것", "categories": ["budget", "quick", "convenience"], "recommend_count": 131 },
-  { "id": 84, "name": "편의점 라볶이", "emoji": "🌶️", "description": "컵에 담긴 분식 세계", "categories": ["budget", "spicy", "quick", "convenience", "lazy"], "recommend_count": 119 },
-  { "id": 85, "name": "편의점 김밥", "emoji": "🍞", "description": "빠르게 김밥으로 해결", "categories": ["budget", "quick", "convenience"], "recommend_count": 96 },
-  { "id": 86, "name": "삼겹살", "emoji": "🍖", "description": "고기의 왕", "categories": ["flex", "late_night"], "recommend_count": 148 }
+  {
+    "id": 1,
+    "name": "김치찌개",
+    "emoji": "🍲",
+    "description": "집밥 느낌 한 그릇",
+    "categories": [
+      "soup",
+      "spicy",
+      "budget"
+    ],
+    "recommend_count": 142
+  },
+  {
+    "id": 2,
+    "name": "짜장면",
+    "emoji": "🍜",
+    "description": "중국집 1인분 OK",
+    "categories": [
+      "budget",
+      "quick"
+    ],
+    "recommend_count": 98
+  },
+  {
+    "id": 3,
+    "name": "삼각김밥",
+    "emoji": "🍙",
+    "description": "편의점의 정석",
+    "categories": [
+      "budget",
+      "quick",
+      "convenience"
+    ],
+    "recommend_count": 211
+  },
+  {
+    "id": 4,
+    "name": "라면",
+    "emoji": "🍜",
+    "description": "자취생의 영원한 친구",
+    "categories": [
+      "spicy",
+      "soup",
+      "budget",
+      "quick",
+      "late_night"
+    ],
+    "recommend_count": 334
+  },
+  {
+    "id": 5,
+    "name": "비빔밥",
+    "emoji": "🥗",
+    "description": "건강하게 한 끼",
+    "categories": [
+      "healthy",
+      "budget"
+    ],
+    "recommend_count": 87
+  },
+  {
+    "id": 6,
+    "name": "치킨",
+    "emoji": "🍗",
+    "description": "혼치킨도 행복",
+    "categories": [
+      "drink",
+      "late_night"
+    ],
+    "recommend_count": 276
+  },
+  {
+    "id": 7,
+    "name": "편의점 도시락",
+    "emoji": "🍱",
+    "description": "가성비 최강",
+    "categories": [
+      "budget",
+      "quick",
+      "convenience"
+    ],
+    "recommend_count": 189
+  },
+  {
+    "id": 8,
+    "name": "카레라이스",
+    "emoji": "🍛",
+    "description": "만들어두면 며칠은 OK",
+    "categories": [
+      "budget"
+    ],
+    "recommend_count": 73
+  },
+  {
+    "id": 9,
+    "name": "김치볶음밥",
+    "emoji": "🍳",
+    "description": "냉장고 파먹기의 정석",
+    "categories": [
+      "budget",
+      "quick",
+      "spicy"
+    ],
+    "recommend_count": 156
+  },
+  {
+    "id": 10,
+    "name": "돈부리",
+    "emoji": "🍚",
+    "description": "일식 1인분 전문점",
+    "categories": [
+      "budget"
+    ],
+    "recommend_count": 64
+  },
+  {
+    "id": 11,
+    "name": "순대국밥",
+    "emoji": "🥣",
+    "description": "든든한 국밥 한 그릇",
+    "categories": [
+      "soup",
+      "budget",
+      "spicy"
+    ],
+    "recommend_count": 112
+  },
+  {
+    "id": 12,
+    "name": "샌드위치",
+    "emoji": "🥪",
+    "description": "간편하고 든든하게",
+    "categories": [
+      "healthy",
+      "budget",
+      "quick",
+      "convenience"
+    ],
+    "recommend_count": 95
+  },
+  {
+    "id": 13,
+    "name": "피자",
+    "emoji": "🍕",
+    "description": "혼피자 2~3조각 딱",
+    "categories": [
+      "late_night",
+      "drink"
+    ],
+    "recommend_count": 134
+  },
+  {
+    "id": 14,
+    "name": "떡볶이",
+    "emoji": "🌶️",
+    "description": "분식의 왕",
+    "categories": [
+      "spicy",
+      "budget",
+      "late_night",
+      "convenience",
+      "quick"
+    ],
+    "recommend_count": 203
+  },
+  {
+    "id": 16,
+    "name": "짬뽕",
+    "emoji": "🦐",
+    "description": "칼칼하게 속 풀기",
+    "categories": [
+      "spicy",
+      "soup"
+    ],
+    "recommend_count": 89
+  },
+  {
+    "id": 19,
+    "name": "김밥",
+    "emoji": "🍣",
+    "description": "한 줄만 사도 든든",
+    "categories": [
+      "budget",
+      "quick",
+      "convenience"
+    ],
+    "recommend_count": 167
+  },
+  {
+    "id": 20,
+    "name": "우동",
+    "emoji": "🍜",
+    "description": "따뜻한 국물 한 사발",
+    "categories": [
+      "soup",
+      "budget"
+    ],
+    "recommend_count": 78
+  },
+  {
+    "id": 21,
+    "name": "햄버거",
+    "emoji": "🍔",
+    "description": "혼밥하기 좋은 패스트푸드",
+    "categories": [
+      "budget",
+      "quick"
+    ],
+    "recommend_count": 143
+  },
+  {
+    "id": 22,
+    "name": "스팸계란밥",
+    "emoji": "🥚",
+    "description": "냉장고 필수 재료로",
+    "categories": [
+      "budget",
+      "quick"
+    ],
+    "recommend_count": 198
+  },
+  {
+    "id": 23,
+    "name": "닭가슴살 샐러드",
+    "emoji": "🥗",
+    "description": "단백질 챙기는 가벼운 한 끼",
+    "categories": [
+      "healthy",
+      "budget",
+      "quick",
+      "convenience"
+    ],
+    "recommend_count": 56
+  },
+  {
+    "id": 24,
+    "name": "막국수",
+    "emoji": "🍝",
+    "description": "여름엔 냉, 겨울엔 온",
+    "categories": [
+      "soup",
+      "budget"
+    ],
+    "recommend_count": 91
+  },
+  {
+    "id": 25,
+    "name": "초밥",
+    "emoji": "🍣",
+    "description": "편의점 초밥도 충분해",
+    "categories": [
+      "convenience",
+      "flex"
+    ],
+    "recommend_count": 109
+  },
+  {
+    "id": 26,
+    "name": "수제버거",
+    "emoji": "🍔",
+    "description": "혼자 여유롭게",
+    "categories": [
+      "flex"
+    ],
+    "recommend_count": 72
+  },
+  {
+    "id": 27,
+    "name": "컵라면",
+    "emoji": "🍜",
+    "description": "언제나 믿음직한",
+    "categories": [
+      "soup",
+      "spicy",
+      "budget",
+      "quick",
+      "convenience",
+      "late_night"
+    ],
+    "recommend_count": 247
+  },
+  {
+    "id": 28,
+    "name": "오므라이스",
+    "emoji": "🍳",
+    "description": "집에서 카페 느낌",
+    "categories": [
+      "budget"
+    ],
+    "recommend_count": 83
+  },
+  {
+    "id": 29,
+    "name": "부대찌개",
+    "emoji": "🌭",
+    "description": "배달 반솥도 OK",
+    "categories": [
+      "soup",
+      "spicy",
+      "drink"
+    ],
+    "recommend_count": 67
+  },
+  {
+    "id": 30,
+    "name": "제육볶음",
+    "emoji": "🥩",
+    "description": "밥 두 공기 각오",
+    "categories": [
+      "spicy",
+      "drink"
+    ],
+    "recommend_count": 175
+  },
+  {
+    "id": 31,
+    "name": "마라탕",
+    "emoji": "🫕",
+    "description": "중독성 있는 매운맛",
+    "categories": [
+      "spicy",
+      "soup",
+      "late_night"
+    ],
+    "recommend_count": 221
+  },
+  {
+    "id": 32,
+    "name": "요아정",
+    "emoji": "🍦",
+    "description": "요거트 아이스크림 정식",
+    "categories": [
+      "sweet",
+      "budget",
+      "convenience",
+      "late_night"
+    ],
+    "recommend_count": 183
+  },
+  {
+    "id": 35,
+    "name": "치맥",
+    "emoji": "🍺",
+    "description": "치킨에 맥주, 국민 조합",
+    "categories": [
+      "drink",
+      "late_night",
+      "budget"
+    ],
+    "recommend_count": 312
+  },
+  {
+    "id": 36,
+    "name": "족발",
+    "emoji": "🍖",
+    "description": "소분 배달도 가능",
+    "categories": [
+      "drink",
+      "late_night"
+    ],
+    "recommend_count": 156
+  },
+  {
+    "id": 37,
+    "name": "곱창전골",
+    "emoji": "🥘",
+    "description": "소주 한 잔이랑",
+    "categories": [
+      "spicy",
+      "soup",
+      "drink"
+    ],
+    "recommend_count": 88
+  },
+  {
+    "id": 38,
+    "name": "두쫀쿠",
+    "emoji": "🍪",
+    "description": "두바이 쫀득 쿠키",
+    "categories": [
+      "sweet",
+      "budget",
+      "convenience"
+    ],
+    "recommend_count": 145
+  },
+  {
+    "id": 39,
+    "name": "붕어빵",
+    "emoji": "🐠",
+    "description": "길거리 간식의 대명사",
+    "categories": [
+      "sweet",
+      "budget",
+      "convenience",
+      "late_night"
+    ],
+    "recommend_count": 207
+  },
+  {
+    "id": 40,
+    "name": "연어덮밥",
+    "emoji": "🍱",
+    "description": "건강하고 맛있는 한 끼",
+    "categories": [
+      "healthy",
+      "flex"
+    ],
+    "recommend_count": 119
+  },
+  {
+    "id": 41,
+    "name": "개성주악",
+    "emoji": "🍩",
+    "description": "쫀득한 전통 기름 도너츠",
+    "categories": [
+      "sweet",
+      "budget",
+      "late_night"
+    ],
+    "recommend_count": 94
+  },
+  {
+    "id": 42,
+    "name": "티라미수",
+    "emoji": "🍮",
+    "description": "달콤쌉쌀한 이탈리안 디저트",
+    "categories": [
+      "sweet",
+      "flex"
+    ],
+    "recommend_count": 78
+  },
+  {
+    "id": 43,
+    "name": "빙수",
+    "emoji": "🧊",
+    "description": "팥빙수부터 인절미까지",
+    "categories": [
+      "sweet",
+      "budget"
+    ],
+    "recommend_count": 165
+  },
+  {
+    "id": 44,
+    "name": "버터떡",
+    "emoji": "🍡",
+    "description": "요즘 핫한 버터 발라먹는 떡",
+    "categories": [
+      "sweet",
+      "budget",
+      "convenience"
+    ],
+    "recommend_count": 132
+  },
+  {
+    "id": 45,
+    "name": "닭갈비",
+    "emoji": "🍗",
+    "description": "칼칼하고 불맛 나는 볶음",
+    "categories": [
+      "spicy",
+      "drink"
+    ],
+    "recommend_count": 188
+  },
+  {
+    "id": 46,
+    "name": "불닭볶음면",
+    "emoji": "🔥",
+    "description": "매운맛 한계 도전",
+    "categories": [
+      "spicy",
+      "budget",
+      "quick",
+      "late_night"
+    ],
+    "recommend_count": 267
+  },
+  {
+    "id": 47,
+    "name": "마라샹궈",
+    "emoji": "🫕",
+    "description": "마라 좋아하면 무조건",
+    "categories": [
+      "spicy",
+      "flex",
+      "late_night"
+    ],
+    "recommend_count": 194
+  },
+  {
+    "id": 48,
+    "name": "쭈꾸미볶음",
+    "emoji": "🦑",
+    "description": "밥이랑 먹으면 찰떡",
+    "categories": [
+      "spicy",
+      "drink",
+      "budget"
+    ],
+    "recommend_count": 142
+  },
+  {
+    "id": 49,
+    "name": "닭발",
+    "emoji": "🦴",
+    "description": "맥주랑 먹으면 천국",
+    "categories": [
+      "spicy",
+      "drink",
+      "late_night"
+    ],
+    "recommend_count": 118
+  },
+  {
+    "id": 50,
+    "name": "순대볶음",
+    "emoji": "🌭",
+    "description": "분식집 숨은 레전드",
+    "categories": [
+      "spicy",
+      "drink",
+      "budget",
+      "late_night"
+    ],
+    "recommend_count": 127
+  },
+  {
+    "id": 51,
+    "name": "엽떡",
+    "emoji": "🌶️",
+    "description": "매운 떡볶이의 끝판왕",
+    "categories": [
+      "spicy",
+      "budget",
+      "late_night"
+    ],
+    "recommend_count": 231
+  },
+  {
+    "id": 52,
+    "name": "설렁탕",
+    "emoji": "🍲",
+    "description": "뽀얀 국물 한 그릇",
+    "categories": [
+      "soup",
+      "budget"
+    ],
+    "recommend_count": 89
+  },
+  {
+    "id": 53,
+    "name": "된장찌개",
+    "emoji": "🥘",
+    "description": "구수하고 따뜻한 집밥",
+    "categories": [
+      "soup",
+      "budget",
+      "healthy"
+    ],
+    "recommend_count": 134
+  },
+  {
+    "id": 54,
+    "name": "육개장",
+    "emoji": "🍲",
+    "description": "얼큰하게 한 그릇",
+    "categories": [
+      "soup",
+      "spicy",
+      "budget"
+    ],
+    "recommend_count": 97
+  },
+  {
+    "id": 55,
+    "name": "감자탕",
+    "emoji": "🦴",
+    "description": "뼈다귀 잡고 먹는 맛",
+    "categories": [
+      "soup",
+      "spicy",
+      "drink"
+    ],
+    "recommend_count": 103
+  },
+  {
+    "id": 56,
+    "name": "냉면",
+    "emoji": "🍜",
+    "description": "시원하게 후루룩",
+    "categories": [
+      "soup",
+      "budget"
+    ],
+    "recommend_count": 112
+  },
+  {
+    "id": 57,
+    "name": "쌀국수",
+    "emoji": "🍜",
+    "description": "가볍고 건강한 국물",
+    "categories": [
+      "soup",
+      "budget",
+      "healthy"
+    ],
+    "recommend_count": 86
+  },
+  {
+    "id": 58,
+    "name": "전복죽",
+    "emoji": "🍚",
+    "description": "몸 챙기는 날",
+    "categories": [
+      "soup",
+      "flex",
+      "healthy"
+    ],
+    "recommend_count": 74
+  },
+  {
+    "id": 59,
+    "name": "아사이볼",
+    "emoji": "🫐",
+    "description": "인스타 갬성 건강식",
+    "categories": [
+      "healthy",
+      "flex"
+    ],
+    "recommend_count": 63
+  },
+  {
+    "id": 60,
+    "name": "포케",
+    "emoji": "🍱",
+    "description": "하와이안 웰니스 한 끼",
+    "categories": [
+      "healthy",
+      "flex",
+      "budget"
+    ],
+    "recommend_count": 81
+  },
+  {
+    "id": 61,
+    "name": "그릭요거트",
+    "emoji": "🥛",
+    "description": "가볍게 죄책감 없이",
+    "categories": [
+      "healthy",
+      "budget",
+      "convenience",
+      "quick"
+    ],
+    "recommend_count": 57
+  },
+  {
+    "id": 62,
+    "name": "두부 샐러드",
+    "emoji": "🥗",
+    "description": "든든한 식물성 한 끼",
+    "categories": [
+      "healthy",
+      "budget"
+    ],
+    "recommend_count": 44
+  },
+  {
+    "id": 63,
+    "name": "오트밀",
+    "emoji": "🥣",
+    "description": "아침엔 가볍게",
+    "categories": [
+      "healthy",
+      "budget",
+      "quick",
+      "convenience"
+    ],
+    "recommend_count": 52
+  },
+  {
+    "id": 64,
+    "name": "스테이크",
+    "emoji": "🥩",
+    "description": "혼자라도 고기는 먹어야지",
+    "categories": [
+      "flex"
+    ],
+    "recommend_count": 148
+  },
+  {
+    "id": 65,
+    "name": "스시 오마카세",
+    "emoji": "🍣",
+    "description": "가끔은 이런 사치도",
+    "categories": [
+      "flex"
+    ],
+    "recommend_count": 87
+  },
+  {
+    "id": 66,
+    "name": "갈비찜",
+    "emoji": "🍖",
+    "description": "특별한 날엔 갈비찜",
+    "categories": [
+      "flex",
+      "soup"
+    ],
+    "recommend_count": 96
+  },
+  {
+    "id": 67,
+    "name": "한우 육회",
+    "emoji": "🥩",
+    "description": "나 자신에게 주는 선물",
+    "categories": [
+      "flex",
+      "drink"
+    ],
+    "recommend_count": 79
+  },
+  {
+    "id": 68,
+    "name": "보쌈",
+    "emoji": "🥬",
+    "description": "막걸리랑 최고의 궁합",
+    "categories": [
+      "flex",
+      "drink"
+    ],
+    "recommend_count": 112
+  },
+  {
+    "id": 69,
+    "name": "까르보나라",
+    "emoji": "🍝",
+    "description": "크리미하게 한 그릇",
+    "categories": [
+      "flex",
+      "budget"
+    ],
+    "recommend_count": 138
+  },
+  {
+    "id": 70,
+    "name": "막걸리 + 파전",
+    "emoji": "🍶",
+    "description": "비 오는 날 조합",
+    "categories": [
+      "drink",
+      "budget",
+      "late_night"
+    ],
+    "recommend_count": 201
+  },
+  {
+    "id": 71,
+    "name": "두부김치",
+    "emoji": "🥢",
+    "description": "소주 한 잔이랑 딱",
+    "categories": [
+      "drink",
+      "budget"
+    ],
+    "recommend_count": 167
+  },
+  {
+    "id": 72,
+    "name": "와인 + 치즈보드",
+    "emoji": "🍷",
+    "description": "홈술의 격을 올려보자",
+    "categories": [
+      "drink",
+      "flex"
+    ],
+    "recommend_count": 93
+  },
+  {
+    "id": 73,
+    "name": "하이볼",
+    "emoji": "🥃",
+    "description": "위스키 소다, 혼술 갬성",
+    "categories": [
+      "drink",
+      "budget"
+    ],
+    "recommend_count": 156
+  },
+  {
+    "id": 74,
+    "name": "사케 + 오뎅",
+    "emoji": "🍢",
+    "description": "일식 감성 혼술",
+    "categories": [
+      "drink",
+      "budget"
+    ],
+    "recommend_count": 84
+  },
+  {
+    "id": 75,
+    "name": "반반치킨",
+    "emoji": "🍗",
+    "description": "양념 반 후라이드 반",
+    "categories": [
+      "drink",
+      "late_night",
+      "budget"
+    ],
+    "recommend_count": 289
+  },
+  {
+    "id": 76,
+    "name": "마카롱",
+    "emoji": "🍬",
+    "description": "형형색색 달달한 한 입",
+    "categories": [
+      "sweet",
+      "flex",
+      "budget"
+    ],
+    "recommend_count": 88
+  },
+  {
+    "id": 77,
+    "name": "크로플",
+    "emoji": "🧇 ",
+    "description": "크루아상 + 와플의 만남",
+    "categories": [
+      "sweet",
+      "budget"
+    ],
+    "recommend_count": 113
+  },
+  {
+    "id": 78,
+    "name": "소금빵",
+    "emoji": "🥐",
+    "description": "버터향 가득 촉촉하게",
+    "categories": [
+      "sweet",
+      "budget",
+      "convenience",
+      "quick"
+    ],
+    "recommend_count": 197
+  },
+  {
+    "id": 79,
+    "name": "탕후루",
+    "emoji": "🍡",
+    "description": "달달 새콤 과일 꼬치",
+    "categories": [
+      "sweet",
+      "budget",
+      "late_night",
+      "convenience"
+    ],
+    "recommend_count": 162
+  },
+  {
+    "id": 80,
+    "name": "흑임자 라떼",
+    "emoji": "☕",
+    "description": "요즘 핫한 고소한 달달",
+    "categories": [
+      "sweet",
+      "budget",
+      "quick"
+    ],
+    "recommend_count": 104
+  },
+  {
+    "id": 81,
+    "name": "편의점 핫바",
+    "emoji": "🌭",
+    "description": "출출할 때 바로 해결",
+    "categories": [
+      "budget",
+      "quick",
+      "convenience"
+    ],
+    "recommend_count": 178
+  },
+  {
+    "id": 82,
+    "name": "떡꼬치",
+    "emoji": "🍢",
+    "description": "매콤 달콤 길거리 간식",
+    "categories": [
+      "budget",
+      "spicy",
+      "late_night",
+      "convenience"
+    ],
+    "recommend_count": 143
+  },
+  {
+    "id": 83,
+    "name": "핫도그",
+    "emoji": "🌭",
+    "description": "밀가루 반죽 바삭한 그것",
+    "categories": [
+      "budget",
+      "quick",
+      "convenience"
+    ],
+    "recommend_count": 131
+  },
+  {
+    "id": 84,
+    "name": "편의점 라볶이",
+    "emoji": "🌶️",
+    "description": "컵에 담긴 분식 세계",
+    "categories": [
+      "budget",
+      "spicy",
+      "quick",
+      "convenience"
+    ],
+    "recommend_count": 119
+  },
+  {
+    "id": 85,
+    "name": "편의점 김밥",
+    "emoji": "🍞",
+    "description": "빠르게 김밥으로 해결",
+    "categories": [
+      "budget",
+      "quick",
+      "convenience"
+    ],
+    "recommend_count": 96
+  },
+  {
+    "id": 86,
+    "name": "삼겹살",
+    "emoji": "🍖",
+    "description": "고기의 왕",
+    "categories": [
+      "flex",
+      "late_night"
+    ],
+    "recommend_count": 148
+  }
 ]

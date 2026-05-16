@@ -14,7 +14,6 @@ const ALL_CATEGORIES = [
   { key: 'healthy', label: '🥗 죄책감 덜한' },
   { key: 'budget', label: '💸 1만원 이하' },
   { key: 'quick', label: '⚡ 빨리 먹기' },
-  { key: 'lazy', label: '🛌 침대에서 해결' },
   { key: 'sweet', label: '🍰 단 거 땡김' },
   { key: 'flex', label: '💎 월급날 플렉스' },
   { key: 'drink', label: '🍺 혼술용' },
