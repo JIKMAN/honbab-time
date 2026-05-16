@@ -83,40 +83,59 @@ ALTER TABLE menu_recommendations ENABLE ROW LEVEL SECURITY;
 ALTER TABLE presence ENABLE ROW LEVEL SECURITY;
 
 -- Chat: anyone can read non-hidden messages
+DROP POLICY IF EXISTS "Read visible messages" ON chat_messages;
 CREATE POLICY "Read visible messages" ON chat_messages
   FOR SELECT USING (is_hidden = FALSE);
 
 -- Chat: anyone can insert (anon users)
+DROP POLICY IF EXISTS "Insert messages" ON chat_messages;
 CREATE POLICY "Insert messages" ON chat_messages
   FOR INSERT WITH CHECK (char_length(content) > 0 AND char_length(content) <= 200);
 
 -- Chat: update only report_count and is_hidden
+DROP POLICY IF EXISTS "Report messages" ON chat_messages;
 CREATE POLICY "Report messages" ON chat_messages
   FOR UPDATE USING (TRUE)
   WITH CHECK (TRUE);
 
 -- Menus: public read
+DROP POLICY IF EXISTS "Read menus" ON menus;
 CREATE POLICY "Read menus" ON menus FOR SELECT USING (TRUE);
+
+DROP POLICY IF EXISTS "Read videos" ON videos;
 CREATE POLICY "Read videos" ON videos FOR SELECT USING (TRUE);
 
 ALTER TABLE menus ENABLE ROW LEVEL SECURITY;
 ALTER TABLE videos ENABLE ROW LEVEL SECURITY;
 
 -- Menu recommendations: insert/read own session
+DROP POLICY IF EXISTS "Insert recommendation" ON menu_recommendations;
 CREATE POLICY "Insert recommendation" ON menu_recommendations
   FOR INSERT WITH CHECK (TRUE);
+
+DROP POLICY IF EXISTS "Read recommendation" ON menu_recommendations;
 CREATE POLICY "Read recommendation" ON menu_recommendations
   FOR SELECT USING (TRUE);
 
 -- Presence: full access
+DROP POLICY IF EXISTS "Presence access" ON presence;
 CREATE POLICY "Presence access" ON presence
   FOR ALL USING (TRUE) WITH CHECK (TRUE);
 
 -- ==========================================
 -- REALTIME
 -- ==========================================
-ALTER PUBLICATION supabase_realtime ADD TABLE chat_messages;
-ALTER PUBLICATION supabase_realtime ADD TABLE presence;
+DO $$ BEGIN
+  IF NOT EXISTS (
+    SELECT 1 FROM pg_publication_tables WHERE pubname = 'supabase_realtime' AND tablename = 'chat_messages'
+  ) THEN ALTER PUBLICATION supabase_realtime ADD TABLE chat_messages; END IF;
+END $$;
+
+DO $$ BEGIN
+  IF NOT EXISTS (
+    SELECT 1 FROM pg_publication_tables WHERE pubname = 'supabase_realtime' AND tablename = 'presence'
+  ) THEN ALTER PUBLICATION supabase_realtime ADD TABLE presence; END IF;
+END $$;
 
 -- ==========================================
 -- SEED DATA — MENUS
