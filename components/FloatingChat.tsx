@@ -5,14 +5,16 @@ import ChatBubble from './ChatBubble';
 import ChatInput from './ChatInput';
 import { generateNickname } from '@/lib/nickname';
 import { filterBadWords, isSpam } from '@/lib/filter';
+import { supabase, isSupabaseConfigured } from '@/lib/supabase';
 
 interface Message {
   id: string;
+  dbId?: string;
   nickname: string;
   content: string;
   reportCount: number;
   isHidden: boolean;
-  left: number; // 버블 수평 시작 위치 (%)
+  left: number;
 }
 
 const SEED_MESSAGES = [
@@ -28,7 +30,6 @@ const SEED_MESSAGES = [
 let seedIndex = 0;
 
 function randomLeft() {
-  // 4% ~ 62% — 버블 너비(최대 ~200px) 감안해 우측 끝 잘림 방지
   return 4 + Math.random() * 58;
 }
 
@@ -36,44 +37,67 @@ export default function FloatingChat({ compact = false }: { compact?: boolean })
   const [messages, setMessages] = useState<Message[]>([]);
   const [myNickname] = useState(() => generateNickname());
   const timerRef = useRef<ReturnType<typeof setTimeout>>(null);
+  const messagesRef = useRef(messages);
+  messagesRef.current = messages;
 
-  const addMessage = useCallback((nickname: string, content: string) => {
-    const filtered = filterBadWords(content);
-    const id = `${Date.now()}-${Math.random()}`;
+  const showMessage = useCallback((id: string, nickname: string, content: string, dbId?: string) => {
     const msg: Message = {
       id,
+      dbId,
       nickname,
-      content: filtered,
+      content,
       reportCount: 0,
       isHidden: false,
       left: randomLeft(),
     };
-
     setMessages((prev) => [...prev.slice(-9), msg]);
-
-    // 애니메이션(7s) 끝나면 DOM에서 제거
     setTimeout(() => {
       setMessages((prev) => prev.filter((m) => m.id !== id));
     }, 7500);
   }, []);
 
+  // 시드 메시지 — Supabase 미연결 시에도 동작
   useEffect(() => {
     function scheduleSeed() {
       const delay = 3000 + Math.random() * 4000;
       timerRef.current = setTimeout(() => {
         const seed = SEED_MESSAGES[seedIndex % SEED_MESSAGES.length];
         seedIndex++;
-        addMessage(seed.nickname, seed.content);
+        showMessage(`seed-${Date.now()}-${Math.random()}`, seed.nickname, seed.content);
         scheduleSeed();
       }, delay);
     }
     scheduleSeed();
     return () => { if (timerRef.current) clearTimeout(timerRef.current); };
-  }, [addMessage]);
+  }, [showMessage]);
 
-  function handleSend(text: string) {
+  // Supabase Realtime — 다른 유저 메시지 수신
+  useEffect(() => {
+    if (!isSupabaseConfigured) return;
+
+    const channel = supabase
+      .channel('chat_messages')
+      .on(
+        'postgres_changes',
+        { event: 'INSERT', schema: 'public', table: 'chat_messages' },
+        (payload) => {
+          const row = payload.new as { id: string; nickname: string; content: string };
+          if (row.nickname === myNickname) return;
+          showMessage(`db-${row.id}`, row.nickname, row.content, row.id);
+        }
+      )
+      .subscribe();
+
+    return () => { supabase.removeChannel(channel); };
+  }, [myNickname, showMessage]);
+
+  async function handleSend(text: string) {
     if (isSpam(text)) return;
-    addMessage(myNickname, text);
+    const filtered = filterBadWords(text);
+    showMessage(`local-${Date.now()}`, myNickname, filtered);
+    if (isSupabaseConfigured) {
+      await supabase.from('chat_messages').insert({ nickname: myNickname, content: filtered });
+    }
   }
 
   function handleReport(id: string) {
@@ -90,7 +114,6 @@ export default function FloatingChat({ compact = false }: { compact?: boolean })
 
   return (
     <div className="w-full">
-      {/* 버블 영역 — 각 버블이 랜덤 위치에서 위로 떠오름 */}
       <div className={`relative overflow-hidden ${areaHeight} w-full`}>
         {messages.map((msg) =>
           msg.isHidden ? null : (
@@ -109,8 +132,6 @@ export default function FloatingChat({ compact = false }: { compact?: boolean })
           )
         )}
       </div>
-
-      {/* 입력창 */}
       <div className="px-4 pb-4">
         <ChatInput onSend={handleSend} />
       </div>
