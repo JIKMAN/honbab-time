@@ -71,23 +71,22 @@ export default function FloatingChat({ compact = false }: { compact?: boolean })
     return () => { if (timerRef.current) clearTimeout(timerRef.current); };
   }, [showMessage]);
 
-  // Supabase Realtime — 다른 유저 메시지 수신
+  // Supabase Broadcast — 다른 유저 메시지 실시간 수신
+  const channelRef = useRef<ReturnType<typeof supabase.channel> | null>(null);
+
   useEffect(() => {
     if (!isSupabaseConfigured) return;
 
     const channel = supabase
-      .channel('chat_messages')
-      .on(
-        'postgres_changes',
-        { event: 'INSERT', schema: 'public', table: 'chat_messages' },
-        (payload) => {
-          const row = payload.new as { id: string; nickname: string; content: string };
-          if (row.nickname === myNickname) return;
-          showMessage(`db-${row.id}`, row.nickname, row.content, row.id);
-        }
-      )
+      .channel('floating-chat')
+      .on('broadcast', { event: 'new_message' }, (payload) => {
+        const { id, nickname, content } = payload.payload as { id: string; nickname: string; content: string };
+        if (nickname === myNickname) return;
+        showMessage(id, nickname, content);
+      })
       .subscribe();
 
+    channelRef.current = channel;
     return () => { supabase.removeChannel(channel); };
   }, [myNickname, showMessage]);
 
@@ -95,8 +94,14 @@ export default function FloatingChat({ compact = false }: { compact?: boolean })
     if (isSpam(text)) return;
     const filtered = filterBadWords(text);
     showMessage(`local-${Date.now()}`, myNickname, filtered);
-    if (isSupabaseConfigured) {
-      await supabase.from('chat_messages').insert({ nickname: myNickname, content: filtered });
+
+    if (isSupabaseConfigured && channelRef.current) {
+      await channelRef.current.send({
+        type: 'broadcast',
+        event: 'new_message',
+        payload: { id: `remote-${Date.now()}-${Math.random()}`, nickname: myNickname, content: filtered },
+      });
+      supabase.from('chat_messages').insert({ nickname: myNickname, content: filtered });
     }
   }
 
